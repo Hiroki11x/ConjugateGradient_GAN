@@ -13,7 +13,7 @@ which python
 WANDB_ENTITY="XXXXXX"
 export WANDB_ENTITY
 
-LR_SCHEDULE="Constant_LR"
+LR_SCHEDULE="ConstantLR"
 DATASET="mnist"
 MODEL_NAME="SNGAN"
 OPTIMIZER="cgd_hs"
