@@ -1,7 +1,6 @@
 project: ConstantLR_mnist_SN_GAN_cgd_hs_dy
 entity: meiji_mlopt
 program: main.py
-# method: bayes
 method: grid
 metric:
   name: loss_G
