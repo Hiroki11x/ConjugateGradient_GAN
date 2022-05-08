@@ -1,4 +1,4 @@
-project: ConstantLR_cifar10_SN_GAN_cgd_dy
+project: ConstantLR_cifar10_SNGAN_cgd_dy
 entity: XXXXXX
 program: main.py
 method: grid

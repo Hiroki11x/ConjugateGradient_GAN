@@ -1,4 +1,4 @@
-project: ConstantLR_mnist_SN_GAN_cgd_hs
+project: ConstantLR_mnist_SNGAN_cgd_hs
 entity: XXXXXX
 program: main.py
 method: grid

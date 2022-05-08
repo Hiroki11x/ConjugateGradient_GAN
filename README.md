@@ -21,11 +21,39 @@ cudnn == 8.1
 
 ## Installation
 
+#### Install Dependent Libraries
+
 ```sh
 pip install -r requirements.txt
 ```
 
+#### Fix Environment Path
+
+```sh
+vim ./exp/env_common.sh
+```
+
+#### Fix Wandb Entity Path
+
+For example, if you want to do a MNIST on SNGAN grid search for the ConstantLR case, you will need to modify the following file.
+
+```sh
+vim ./sweep_config/ConstantLR_SNGAN_MNIST/sgd.yaml
+```
+
+Please change entity name `XXXXXX` to your wandb entitiy.
+
+
+```yaml
+project: ConstantLR_mnist_SNGAN_sgd
+entity: XXXXXX
+program: main.py
+method: grid
+```
+
 ## Sweep
+
+This section shows how to grid-search sgd's hyperparameters. Other optimizers can be executed in the same way.
 
 #### ConstantLR SNGAN MNIST
 

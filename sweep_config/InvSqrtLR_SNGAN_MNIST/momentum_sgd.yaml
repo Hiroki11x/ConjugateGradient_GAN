@@ -1,4 +1,4 @@
-project: InvSqrt_mnist_SN_GAN_momentum_sgd
+project: InvSqrt_mnist_SNGAN_momentum_sgd
 entity: XXXXXX
 program: main.py
 method: grid

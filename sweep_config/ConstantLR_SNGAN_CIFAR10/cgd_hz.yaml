@@ -1,4 +1,4 @@
-project: ConstantLR_cifar10_SN_GAN_cgd_hz
+project: ConstantLR_cifar10_SNGAN_cgd_hz
 entity: XXXXXX
 program: main.py
 method: grid
