@@ -1,5 +1,5 @@
 project: InvSqrt_cifar10_SN_GAN_momentum_sgd
-entity: meiji_mlopt
+entity: XXXXXX
 program: main.py
 method: grid
 metric:
