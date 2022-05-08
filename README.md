@@ -26,3 +26,31 @@ pip install -r requirements.txt
 ```
 
 ## Sweep
+
+#### ConstantLR SNGAN MNIST
+
+```sh
+cd exp/sweep_scripts/ConstantLR_SNGAN_MNIST/
+./sweep_agent_sgd.sh
+```
+
+#### ConstantLR SNGAN CIFAR10
+
+```sh
+cd exp/sweep_scripts/ConstantLR_SNGAN_CIFAR10/
+./sweep_agent_sgd.sh
+```
+
+#### InvSqrtLR SNGAN MNIST
+
+```sh
+cd exp/sweep_scripts/InvSqrtLR_SNGAN_MNIST/
+./sweep_agent_sgd.sh
+```
+
+#### InvSqrtLR SNGAN CIFAR10
+
+```sh
+cd exp/sweep_scripts/InvSqrtLR_SNGAN_CIFAR10/
+./sweep_agent_sgd.sh
+```
