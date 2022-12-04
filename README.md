@@ -6,7 +6,24 @@ Generative Adversarial Networks (GANs)  formulate this problem as a game between
 This optimization is more complicated than minimizing a single objective function. Hence, it would be difficult to show stability and optimality for the existing methods for this optimization. 
 Here, we propose applying the conjugate gradient method that can solve stably and quickly general large-scale stationary point problems to the LNE problem in GANs.
 We give proof and convergence analysis under mild assumptions showing that the proposed method converges to a LNE with three different learning rate update rules, including a constant learning rate as the first attempt ever. 
-Finally, we present results that the proposed method outperforms stochastic gradient descent (SGD), momentum SGD, and Adam in terms of FID score.
+Finally, we present results that the proposed method outperforms stochastic gradient descent (SGD), momentum SGD, and achieves competitive FID score with Adam in terms of FID score.
+
+## Additional Experimental Results of Rebuttal
+
+We additionally conducted experiments on SNGAN w/ ResNet generator as diminishing return experiments. We report the best FID and the best-10 FID by using grid search to find hyperparameters.
+It should be noted that the previous study [Miy+2017] used the Chainer framework, while our implementation uses Pytorch.
+In our experiments, Adam updated FID scores of [Miy+2017] because of sufficient hyperparameter search.
+However, Adam has stronger hyperparameter sensitivities, and Conjugate gradient methods outperform the other optimizers in the average of the Best-10 FIDs.
+
+
+|                               | Adam         | SGD        | Momentum SGD  | CGD_DY      | CGD_FR     | CGD_FR_PRP | CGD_HS     | CGD_HS_DY  | CGD_HZ     | CGD_PRP    |
+|-------------------------------|--------------|------------|---------------|-------------|------------|------------|------------|------------|------------|------------|
+| Miy+2017 (Constant LR)        | 21.7         | -          | -             | -           | -          | -          | -          | -          | -          | -          |
+| Ours (Constant LR)            | 19.38        | 35.50      | 35.42         | 30.76       | 26.03      | 34.47      | 32.92      | 34.49      | 32.78      | 31.51      |
+| Ours (Diminishing LR)         | 75.86        | 43.67      | 76.07         | 38.11       | 39.27      | (WIP)      | (WIP)      | (WIP)      | (WIP)      | (WIP)      |
+| Ours (Constant LR) / Best-10    | 51.16±33.71  | 41.09±8.13 | 82.15±51.82   | 33.70±2.04  | 29.63±2.26 | 34.78±2.17 | 34.82±1.07 | 34.12±1.31 | 34.28±0.96 | 34.53±2.01 |
+| Ours (Diminishing LR) / Best-10 | 135.86±32.65 | 51.80±7.84 | 210.10±59.333 | 53.11±12.89 | 47.56±8.82 | (WIP)      | (WIP)      | (WIP)      | (WIP)      | (WIP)      |
+
 ## Prerequisites
 
 ```sh
@@ -39,17 +56,17 @@ vim ./exp/env_common.sh
 
 #### Fix Wandb Entity Path
 
-For example, if you want to do a MNIST on SNGAN grid search for the ConstantLR case, you will need to modify the following file.
+For example, if you want to do a MNIST on DCGAN w/ SN grid search for the ConstantLR case, you will need to modify the following file.
 
 ```sh
-vim ./sweep_config/ConstantLR_SNGAN_MNIST/sgd.yaml
+vim ./sweep_config/ConstantLR_DCGANSN_MNIST/sgd.yaml
 ```
 
 Please change entity name `XXXXXX` to your wandb entitiy.
 
 
 ```yaml
-project: ConstantLR_mnist_SNGAN_sgd
+project: ConstantLR_mnist_DCGANSN_sgd
 entity: XXXXXX
 program: main.py
 method: grid
@@ -59,30 +76,38 @@ method: grid
 
 This section shows how to grid-search sgd's hyperparameters. Other optimizers can be executed in the same way.
 
-#### ConstantLR SNGAN MNIST
+#### ConstantLR DCGAN w/SN MNIST
 
 ```sh
-cd exp/sweep_scripts/ConstantLR_SNGAN_MNIST/
+cd exp/sweep_scripts/ConstantLR_DCGANSN_MNIST/
 ./sweep_agent_sgd.sh
 ```
 
-#### ConstantLR SNGAN CIFAR10
+#### ConstantLR DCGAN w/ SN CIFAR10
 
 ```sh
-cd exp/sweep_scripts/ConstantLR_SNGAN_CIFAR10/
+cd exp/sweep_scripts/ConstantLR_DCGANSN_CIFAR10/
 ./sweep_agent_sgd.sh
 ```
 
-#### InvSqrtLR SNGAN MNIST
+#### DiminishingLR DCGAN w/ SN MNIST
 
 ```sh
-cd exp/sweep_scripts/InvSqrtLR_SNGAN_MNIST/
+cd exp/sweep_scripts/InvSqrtLR_DCGANSN_MNIST/
 ./sweep_agent_sgd.sh
 ```
 
-#### InvSqrtLR SNGAN CIFAR10
+#### DiminishingLR DCGAN w/ SN CIFAR10
 
 ```sh
-cd exp/sweep_scripts/InvSqrtLR_SNGAN_CIFAR10/
+cd exp/sweep_scripts/InvSqrtLR_DCGANSN_CIFAR10/
+./sweep_agent_sgd.sh
+```
+
+
+#### DiminishingLR DCGAN w/ SN CIFAR10
+
+```sh
+cd exp/sweep_scripts/DiminishingLR_DCGANSN_CIFAR10/
 ./sweep_agent_sgd.sh
 ```
