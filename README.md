@@ -8,7 +8,7 @@ Here, we propose applying the conjugate gradient method that can solve stably an
 We give proof and convergence analysis under mild assumptions showing that the proposed method converges to a LNE with three different learning rate update rules, including a constant learning rate as the first attempt ever. 
 Finally, we present results that the proposed method outperforms stochastic gradient descent (SGD), momentum SGD, and achieves competitive FID score with Adam in terms of FID score.
 
-## Additional Experimental Results of Rebuttal
+## Additional Experimental Results for Rebuttal
 
 We additionally conducted experiments on SNGAN w/ ResNet generator as diminishing return experiments. We report the best FID and the best-10 FID by using grid search to find hyperparameters.
 It should be noted that the previous study [Miy+2017] used the Chainer framework, while our implementation uses Pytorch.
