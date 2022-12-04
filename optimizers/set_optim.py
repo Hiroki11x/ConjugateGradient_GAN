@@ -4,7 +4,7 @@ import torch
 
 import sys
 import os
-from pytorch_dnn_arsenal.optimizer import build_optimizer, OptimizerSetting
+from internal_library import build_optimizer, OptimizerSetting
 
 def set_optimizers(optimizer, model, lr, momentum, beta1, beta2, eps, beta_momentum_coeff):
 

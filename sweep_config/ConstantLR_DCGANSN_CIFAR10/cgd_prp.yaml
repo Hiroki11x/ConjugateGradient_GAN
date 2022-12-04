@@ -1,0 +1,31 @@
+project: ConstantLR_cifar10_DCGANSN_cgd_prp
+entity: XXXXXX
+program: main.py
+method: grid
+metric:
+  name: loss_G
+  goal: maxmize
+parameters:
+  optimizer:
+    values: ['cgd_prp']
+  lr_D:
+    values: [0.005, 0.001, 0.0005, 0.0001, 0.00005]
+  lr_G:
+    values: [0.005, 0.001, 0.0005, 0.0001, 0.00005]
+  batchsize:
+    values: [256]
+  beta_momentum_coeff:
+    values: [0.5, 0.75, 1.0]
+command:
+  - python
+  - ${program}
+  - ${args}
+  - "--manualSeed"
+  - "100"
+  - "--dataset"
+  - "cifar10"
+  - "--model"
+  - "GAN"
+  - "--SN"
+  - "--scheduler_type"
+  - "ConstLR"
