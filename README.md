@@ -24,9 +24,8 @@ However, Adam has stronger hyperparameter sensitivities, and Conjugate gradient 
 | Ours (Constant LR) / Best-10    | 51.16±33.71  | 41.09±8.13 | 82.15±51.82   | 33.70±2.04  | 29.63±2.26 | 34.78±2.17 | 34.82±1.07 | 34.12±1.31 | 34.28±0.96 | 34.53±2.01 |
 | Ours (Diminishing LR) / Best-10 | 135.86±32.65 | 51.80±7.84 | 210.10±59.33 | 53.11±12.89 | 47.56±8.82 | 37.39±2.74  | 37.40±3.10 |40.63±3.29 |38.24±2.97 | 37.94±3.62 |
 
+<img src="figs/best-10-avg_fid_sngan_resnet_constant.png" alt="Constant" width="50%"/><img src="figs/best-10-avg_fid_sngan_resnet_diminishing.png" alt="Diminishing" width="50%"/>
 
-![](figs/best-10-avg_fid_sngan_resnet_constant.png)
-![](figs/best-10-avg_fid_sngan_resnet_diminishing.png)
 
 ## Prerequisites
 
