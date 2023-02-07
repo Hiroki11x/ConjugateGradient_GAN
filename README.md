@@ -15,14 +15,13 @@ It should be noted that the previous study [Miy+2017] used the Chainer framework
 In our experiments, Adam updated FID scores of [Miy+2017] because of sufficient hyperparameter search.
 However, Adam has stronger hyperparameter sensitivities, and Conjugate gradient methods outperform the other optimizers in the average of the Best-10 FIDs.
 
-
-|                               | Adam         | SGD        | Momentum SGD  | CGD_DY      | CGD_FR     | CGD_FR_PRP | CGD_HS     | CGD_HS_DY  | CGD_HZ     | CGD_PRP    |
-|-------------------------------|--------------|------------|---------------|-------------|------------|------------|------------|------------|------------|------------|
-| Miy+2017 (Constant LR)        | 21.7         | -          | -             | -           | -          | -          | -          | -          | -          | -          |
-| Ours (Constant LR)            | 19.38        | 35.50      | 35.42         | 30.76       | 26.03      | 34.47      | 32.92      | 34.49      | 32.78      | 31.51      |
-| Ours (Diminishing LR)         | 75.86        | 43.67      | 76.07         | 37.12       | 34.84      | 32.27      | 31.02      | 32.71      | 31.61      | 30.48      |
-| Ours (Constant LR) / Best-10    | 51.16±33.71  | 41.09±8.13 | 82.15±51.82   | 33.70±2.04  | 29.63±2.26 | 34.78±2.17 | 34.82±1.07 | 34.12±1.31 | 34.28±0.96 | 34.53±2.01 |
-| Ours (Diminishing LR) / Best-10 | 135.86±32.65 | 51.80±7.84 | 210.10±59.33 | 53.11±12.89 | 47.56±8.82 | 37.39±2.74  | 37.40±3.10 |40.63±3.29 |38.24±2.97 | 37.94±3.62 |
+|                                       | Adam         | SGD        | Momentum SGD  | CGD_DY      | CGD_FR     | CGD_FR_PRP | CGD_HS     | CGD_HS_DY  | CGD_HZ     | CGD_PRP    |
+|---------------------------------------|--------------|------------|---------------|-------------|------------|------------|------------|------------|------------|------------|
+| Miy+2017 (Constant LR)                | 21.7         | -          | -             | -           | -          | -          | -          | -          | -          | -          |
+| Ours (Constant LR) / Top1             | 19.38        | 30.34      | 34.42         | 30.13       | 26.02      | 30.31      | 29.29      | 29.54      | 29.41      | 28.94      |
+| Ours (Diminishing LR) / Top1          | 51.96        | 40.55      | 73.66         | 35.29       | 32.17      | 31.06      | 30.03      | 29.09      | 29.64      | 30.47      |
+| Ours (Constant LR) / Top10 Average    | 51.16±33.71  | 41.09±8.13 | 82.15±51.82   | 33.70±2.04  | 29.63±2.26 | 34.78±2.17 | 34.82±1.07 | 34.12±1.31 | 34.28±0.96 | 34.53±2.01 |
+| Ours (Diminishing LR) / Top10 Average | 135.86±32.65 | 51.80±7.84 | 205.29±59.333 | 42.39±12.89 | 38.20±8.82 | 37.39±2.74 | 36.96±2.77 | 39.90±3.06 | 38.24±2.97 | 37.94±3.62 |
 
 <img src="figs/best-10-avg_fid_sngan_resnet_constant.png" alt="Constant" width="50%"/><img src="figs/best-10-avg_fid_sngan_resnet_diminishing.png" alt="Diminishing" width="50%"/>
 
