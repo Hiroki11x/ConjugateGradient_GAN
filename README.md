@@ -79,7 +79,7 @@ method: grid
 This section shows how to grid-search sgd's hyperparameters. Other optimizers can be executed in the same way.
 
 
-#### CL SNGAN w/ ResNet Generator on CIFAR10
+#### ConstantLR SNGAN w/ ResNet Generator on CIFAR10
 
 ```sh
 cd exp/sweep_scripts/CL_RESNET_CIFAR10/
