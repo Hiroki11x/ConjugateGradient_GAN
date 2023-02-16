@@ -23,6 +23,20 @@ def build_scheduler(opt, optimizerD, optimizerG):
         scheduler_D = lr_scheduler.LambdaLR(optimizerD, lr_lambda = lambda steps: 1/math.sqrt(steps+1))
         scheduler_G = lr_scheduler.LambdaLR(optimizerG, lr_lambda = lambda steps: 1/math.sqrt(steps+1))
 
+    elif opt.scheduler_type == 'StepDecayLR':
+
+        """
+        ref: https://katsura-jp.hatenablog.com/entry/2019/01/30/183501#LambdaLR
+        """
+
+        """
+        (0.9)^5 = 0.59049
+        (0.9)^10 = 0.3486784401
+        """
+
+        scheduler_D = lr_scheduler.StepLR(optimizerD, step_size=10000, gamma=0.9)
+        scheduler_G = lr_scheduler.StepLR(optimizerD, step_size=10000, gamma=0.9)
+
 
     elif opt.scheduler_type == 'TTScaleLR ':
 

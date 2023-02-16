@@ -9,7 +9,7 @@ def date_str():
 def set_otf(opt, wandb_project_name):
 
     """
-    return : e.g. const_lr_cifar10_DCGANSN_cgd_fr/bs64-betas0.5-0.999-eps1e-12-lr0.01-clip-0.01-2022_2_1_7_1
+    return : e.g. const_lr_cifar10_RESNET_cgd_fr/bs64-betas0.5-0.999-eps1e-12-lr0.01-clip-0.01-2022_2_1_7_1
     """
 
     date_suffix = date_str()

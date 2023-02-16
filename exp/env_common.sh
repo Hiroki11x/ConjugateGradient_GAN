@@ -1,6 +1,3 @@
-# Arsenal Environment
-ARSENAL_PATH="path_to/pytorch_dnn_arsenal"
-export ARSENAL_PATH
 
 # FID Model Path
 # Ref https://github.com/mseitzer/pytorch-fid/releases

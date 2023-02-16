@@ -1,4 +1,4 @@
-# Conjugate Gradient Method for Generative Adversarial Networks
+# Conjugate Gradient Method for Generative Adversarial Networks @AISTATS2023
 
 ## Abstract
 Generative models such as used for image generation are required to solve the Jensen–Shannon divergence minimization problem between the model distribution and the data distribution, which is computationally infeasible.
@@ -58,17 +58,17 @@ vim ./exp/env_common.sh
 
 #### Fix Wandb Entity Path
 
-For example, if you want to do a MNIST on DCGAN w/ SN grid search for the ConstantLR case, you will need to modify the following file.
+For example, if you want to do a CIFAR10 on SNGAN w/ ResNet Generator, grid search for the ConstantLR case, you will need to modify the following file.
 
 ```sh
-vim ./sweep_config/ConstantLR_DCGANSN_MNIST/sgd.yaml
+vim ./sweep_config/CL_RESNET_CIFAR10/sgd.yaml
 ```
 
 Please change entity name `XXXXXX` to your wandb entitiy.
 
 
 ```yaml
-project: ConstantLR_mnist_DCGANSN_sgd
+project: CL_RESNET_CIFAR10
 entity: XXXXXX
 program: main.py
 method: grid
@@ -78,38 +78,20 @@ method: grid
 
 This section shows how to grid-search sgd's hyperparameters. Other optimizers can be executed in the same way.
 
-#### ConstantLR DCGAN w/SN MNIST
+
+#### CL SNGAN w/ ResNet Generator on CIFAR10
 
 ```sh
-cd exp/sweep_scripts/ConstantLR_DCGANSN_MNIST/
-./sweep_agent_sgd.sh
-```
-
-#### ConstantLR DCGAN w/ SN CIFAR10
-
-```sh
-cd exp/sweep_scripts/ConstantLR_DCGANSN_CIFAR10/
-./sweep_agent_sgd.sh
-```
-
-#### DiminishingLR DCGAN w/ SN MNIST
-
-```sh
-cd exp/sweep_scripts/InvSqrtLR_DCGANSN_MNIST/
-./sweep_agent_sgd.sh
-```
-
-#### DiminishingLR DCGAN w/ SN CIFAR10
-
-```sh
-cd exp/sweep_scripts/InvSqrtLR_DCGANSN_CIFAR10/
+cd exp/sweep_scripts/CL_RESNET_CIFAR10/
 ./sweep_agent_sgd.sh
 ```
 
 
-#### DiminishingLR DCGAN w/ SN CIFAR10
+#### DiminishingLR SNGAN w/ ResNet Generator on CIFAR10
 
 ```sh
-cd exp/sweep_scripts/DiminishingLR_DCGANSN_CIFAR10/
+cd exp/sweep_scripts/DL_RESNET_CIFAR10/
 ./sweep_agent_sgd.sh
 ```
+
+

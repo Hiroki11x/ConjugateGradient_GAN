@@ -55,7 +55,7 @@ parser.add_argument('--ngpu', type=int, default=1, help='number of GPUs to use')
 parser.add_argument('--manualSeed', type=int, help='manual seed')
 
 # For Optimizer and Learning Rate
-parser.add_argument('--scheduler_type', default='ConstLR', choices=['ConstLR', 'ExponentialLR', 'SqrtLR', 'TTScaleLR'], help='ConstLR, ExponentialLR, SqrtLR or TTScaleLR')
+parser.add_argument('--scheduler_type', default='ConstLR', choices=['ConstLR', 'ExponentialLR', 'SqrtLR', 'TTScaleLR', 'StepDecayLR'], help='ConstLR, ExponentialLR, SqrtLR, TTScaleLR or StepDecayLR')
 parser.add_argument('--lr_D', type=float, default=0.0002, help='learning rate for discrim, default=0.0002')
 parser.add_argument('--lr_G', type=float, default=0.0002, help='learning rate for gen, default=0.0002')
 parser.add_argument('--optimizer', default='adam', type=str, choices=['adam', 'momentum_sgd', 'sgd', 'cgd_dy', 'cgd_fr', 'cgd_hs', 'cgd_hz', 'cgd_fr_prp', 'cgd_hs_dy', 'cgd_prp'], help='Optimizer')

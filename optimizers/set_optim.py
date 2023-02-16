@@ -4,7 +4,7 @@ import torch
 
 import sys
 import os
-from internal_library import build_optimizer, OptimizerSetting
+from util import build_optimizer, OptimizerSetting
 
 def set_optimizers(optimizer, model, lr, momentum, beta1, beta2, eps, beta_momentum_coeff):
 
@@ -17,7 +17,7 @@ def set_optimizers(optimizer, model, lr, momentum, beta1, beta2, eps, beta_momen
     elif optimizer == 'rmsprop':
         optimizer = torch.optim.RMSprop(model.parameters(), lr=lr)
 
-    elif optimizer == 'cgd_fr':
+    elif optimizer == 'cgd_fr': 
         optimizer = build_optimizer(
             OptimizerSetting(name='cgd',
                             weight_decay = 0,
